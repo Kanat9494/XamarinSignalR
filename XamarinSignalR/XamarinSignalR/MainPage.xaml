@@ -14,7 +14,7 @@
             <Entry HorizontalOptions="FillAndExpand" Text="{Binding Message}"/>
             <Button Text="Отправить" IsEnabled="{Binding IsConnected}" Command="{Binding SendMessageCommand}"/>
         </StackLayout>
-        <ListView ItemsSource="{Binding Messages}">
+        <ListView ItemsSource="{Binding MessageData}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

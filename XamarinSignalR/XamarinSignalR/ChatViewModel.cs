@@ -51,7 +51,7 @@ namespace XamarinSignalR
 
         public ChatViewModel()
         {
-            hubConnection = new HubConnectionBuilder().WithUrl("http://localhost:5153/chat")
+            hubConnection = new HubConnectionBuilder().WithUrl("http://192.168.1.51:45455/chat")
                 .Build();
 
             MessageData = new ObservableCollection<MessageData>();
@@ -69,7 +69,7 @@ namespace XamarinSignalR
                 await Connect();
             };
 
-            hubConnection.On<string, string>("Receive", (user, message) =>
+            hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
             {
                 SendLocalMessage(user, message);
             });
